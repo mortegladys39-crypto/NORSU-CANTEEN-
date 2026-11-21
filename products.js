@@ -1,0 +1,26 @@
+// Default product catalog. These prices use the latest list supplied for NORSU CANTEEN.
+export const defaultProducts = [
+{id:1,name:"Cheeseburger",desc:"Beef patty, cheese",price:75,cat:"Foods",file:"1-cheeseburger.jpg"},
+{id:2,name:"Chicken Burger",desc:"Crispy chicken",price:63,cat:"Foods",file:"2-chicken-burger.jpg"},
+{id:3,name:"Pizza Slice",desc:"Cheesy slice",price:70,cat:"Foods",file:"3-pizza.jpg"},
+{id:4,name:"Fried Chicken",desc:"Crispy, juicy",price:80,cat:"Foods",file:"4-fried-chicken.jpg"},
+{id:5,name:"Chicken Rice",desc:"Much rice",price:85,cat:"Foods",file:"5-chicken-rice.jpg"},
+{id:6,name:"Pork Adobo",desc:"Filipino style",price:75,cat:"Foods",file:"6-adobo.jpg"},
+{id:7,name:"Pancit Canton",desc:"Savory noodles",price:56,cat:"Foods",file:"7-pancit.jpg"},
+{id:8,name:"Hotdog Sandwich",desc:"Hotdog w/ sauce",price:42,cat:"Foods",file:"8-hotdog.jpg"},
+{id:9,name:"Siomai Rice",desc:"Siomai + rice",price:58,cat:"Foods",file:"9-siomai.jpg"},
+{id:10,name:"French Fries",desc:"Golden crispy",price:35,cat:"Snacks",file:"10-fries.jpg"},
+{id:11,name:"Chicken Nuggets",desc:"Crunchy bites",price:60,cat:"Snacks",file:"11-nuggets.jpg"},
+{id:12,name:"Nachos",desc:"Chips cheese",price:50,cat:"Snacks",file:"12-nachos.jpg"},
+{id:13,name:"Banana Cue",desc:"Sweet banana",price:20,cat:"Snacks",file:"13-banana-cue.jpg"},
+{id:14,name:"Turon",desc:"Banana roll",price:20,cat:"Snacks",file:"14-turon.jpg"},
+{id:15,name:"Cookies",desc:"Sweet cookies",price:25,cat:"Snacks",file:"15-cookies.jpg"},
+{id:16,name:"Coca-Cola",desc:"Cold soft drink",price:20,cat:"Drinks",file:"16-coca-cola.jpg"},
+{id:17,name:"Sprite",desc:"Lemon soda",price:20,cat:"Drinks",file:"17-sprite.jpg"},
+{id:18,name:"Royal",desc:"Orange soda",price:20,cat:"Drinks",file:"18-royal.jpg"},
+{id:19,name:"Iced Tea",desc:"Chilled tea",price:25,cat:"Drinks",file:"19-iced-tea.jpg"},
+{id:20,name:"Milk Tea",desc:"With pearls",price:35,cat:"Drinks",file:"20-milk-tea.jpg"},
+{id:21,name:"Water",desc:"Water",price:15,cat:"Drinks",file:"21-water.jpg"},
+{id:22,name:"Orange Juice",desc:"Fresh juice",price:25,cat:"Drinks",file:"22-orange-juice.jpg"},
+{id:23,name:"Coffee",desc:"Hot coffee",price:25,cat:"Drinks",file:"23-coffee.jpg"}
+];

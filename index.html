@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>NORSU CANTEEN - Order Now</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+  <div class="top">
+    <a href="index.html" class="logo">🍔 NORSU CANTEEN</a>
+    <div class="top-actions">
+      <a href="admin.html" class="admin-link">👑 Admin</a>
+      <div class="cart-counter">🛒 <span id="cartCount">0</span></div>
+    </div>
+  </div>
+
+  <div class="hero">
+    <h1>Welcome to <span>NORSU CANTEEN!</span> 🎉</h1>
+    <p>Tap any food below to add it to your cart! GCash: 09481114418</p>
+    <div class="badges"><span>🍽️ Freshly Prepared</span><span>💳 GCash Ready</span><span>📱 QR Ready</span></div>
+  </div>
+
+  <div class="cats">
+    <button class="cat active" data-cat="All">⭐ All (23)</button>
+    <button class="cat" data-cat="Foods">🍔 Foods (9)</button>
+    <button class="cat" data-cat="Snacks">🍟 Snacks (6)</button>
+    <button class="cat" data-cat="Drinks">🥤 Drinks (8)</button>
+  </div>
+
+  <div class="section-label">🍽️ Menu - TAP TO ADD!</div>
+  <div id="loadMessage" class="notice">Connecting to the menu...</div>
+  <div class="grid" id="products"></div>
+
+  <div class="card order-card">
+    <div class="card-heading"><b>🛒 Cart & Payment</b><b class="total-badge">₱<span id="tot">0</span>.00</b></div>
+    <div id="cartList" class="cart-list">No items</div>
+    <div class="input-group"><label for="custName">👤 Your Name:</label><input id="custName" maxlength="60" placeholder="Enter your name" autocomplete="name"></div>
+
+    <div class="input-group">
+      <label>💳 Payment - Choose:</label>
+      <div class="pay-row">
+        <button type="button" class="pay active" data-pay="Cash">💵<br>Cash on Pickup</button>
+        <button type="button" class="pay" data-pay="GCash">📱<br>GCash</button>
+      </div>
+      <div class="gcash" id="gcashBox">
+        <div class="gcash-title">📱 GCash Payment - 09481114418</div>
+        <img id="gcashQR" class="gcash-qr" alt="GCash payment QR">
+        <div class="gcash-info">
+          <div>📱 Number: <b>09481114418</b></div>
+          <div>👤 Name: <b>Campus Bites</b></div>
+        </div>
+        <div class="input-group"><label for="gcashRef">GCash Reference No.:</label><input id="gcashRef" placeholder="Enter reference number"></div>
+        <div class="input-group"><label for="gcashNum">Your GCash No.:</label><input id="gcashNum" inputmode="numeric" maxlength="15" placeholder="09xxxxxxxxx"></div>
+      </div>
+    </div>
+    <button class="btn btn-order" id="placeBtn">🛒 PLACE ORDER</button>
+    <div class="item-count" id="count">0 items</div>
+    <div id="orderMessage" class="notice" aria-live="polite"></div>
+  </div>
+
+  <div class="card">
+    <b>👀 Live Orders - Your Orders Status</b>
+    <p class="small-muted">Only orders placed from this browser are shown here.</p>
+    <div id="publicOrders" class="orders-list"><div class="small-muted">Your recent orders will appear here.</div></div>
+  </div>
+
+  <div class="card qr-card">
+    <div class="section-label">📱 QR Scan to Order - For Everyone!</div>
+    <img id="mainQR" alt="Scan to open NORSU CANTEEN">
+    <div id="qrLink"></div>
+    <div class="small-muted">Scan this QR code to open the customer ordering page.</div>
+  </div>
+  <footer>© <span id="year"></span> NORSU CANTEEN</footer>
+</div>
+<script type="module" src="script.js"></script>
+</body>
+</html>

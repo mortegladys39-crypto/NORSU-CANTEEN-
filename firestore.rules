@@ -1,0 +1,42 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function isOwner() {
+      return request.auth != null
+        && request.auth.token.email == "REPLACE_WITH_YOUR_OWNER_EMAIL"
+;
+    }
+
+    function isCustomer() {
+      return request.auth != null && request.auth.token.firebase.sign_in_provider == "anonymous";
+    }
+
+    match /products/{productId} {
+      allow read: if true;
+      allow create, update, delete: if isOwner();
+    }
+
+    match /orders/{orderId} {
+      // Customers can submit orders only under their own anonymous-auth UID.
+      allow create: if isCustomer()
+        && request.resource.data.customerUid == request.auth.uid
+        && request.resource.data.name is string
+        && request.resource.data.name.size() > 0
+        && request.resource.data.name.size() <= 60
+        && request.resource.data.total is number
+        && request.resource.data.total >= 0
+        && request.resource.data.items is list
+        && request.resource.data.items.size() > 0
+        && request.resource.data.items.size() <= 30
+        && request.resource.data.status == "Pending"
+        && request.resource.data.payment in ["Cash", "GCash"];
+
+      // Owner can see every order; a customer can read only orders with their UID.
+      allow read: if isOwner()
+        || (isCustomer() && resource.data.customerUid == request.auth.uid);
+
+      // Only the owner can update order status or delete orders.
+      allow update, delete: if isOwner();
+    }
+  }
+}

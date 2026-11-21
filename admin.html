@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Admin - NORSU CANTEEN</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+  <div class="top">
+    <a href="index.html" class="logo">🍔 NORSU CANTEEN - Admin</a>
+    <a href="index.html" class="admin-link" style="background:#0f2e1f">← Back to Ordering</a>
+  </div>
+
+  <div id="loginSection" class="login-box">
+    <div style="font-size:40px">🔒</div>
+    <h2>Owner Login</h2>
+    <p class="small-muted">Sign in using the owner email and password created in Firebase Authentication.</p>
+    <form id="loginForm" class="login-row">
+      <input type="email" id="adminEmail" placeholder="Owner email" autocomplete="username" required>
+      <input type="password" id="adminPassword" placeholder="Password" autocomplete="current-password" required>
+      <button class="btn" style="background:red;color:white" type="submit" id="loginBtn">Sign in</button>
+    </form>
+    <div id="loginMessage" class="notice" aria-live="polite"></div>
+  </div>
+
+  <div id="adminPanel" hidden>
+    <div class="admin-header">
+      <h1 style="margin:0">👑 Owner Admin Panel</h1>
+      <p style="margin:6px 0 0;font-size:13px">Manage NORSU CANTEEN products, pictures, and live customer orders.</p>
+      <div id="signedInAs" style="font-size:11px;margin-top:8px"></div>
+    </div>
+
+    <div class="card">
+      <div class="card-heading"><b style="font-size:16px">📸 Product Picture Manager</b><span class="status-badge" style="background:#dcfce7">Firebase Storage</span></div>
+      <p class="small-muted">Choose a food picture to upload it to Firebase Storage. It will then appear for all customers.</p>
+      <div class="admin-actions">
+        <button class="btn" style="background:#0f2e1f;color:white" id="seedBtn">📦 Publish Starter Menu (23 products)</button>
+        <button class="btn" style="background:#6b7280;color:white" id="refreshBtn">🔄 Refresh</button>
+      </div>
+      <div id="adminNotice" class="notice" aria-live="polite"></div>
+      <div id="productManager" class="prod-manage"></div>
+    </div>
+
+    <div class="card">
+      <div class="card-heading"><b style="font-size:16px">📦 Live Orders Management</b><span class="status-badge" style="background:#dbeafe">Real-time</span></div>
+      <p class="small-muted">Update orders to Preparing or Ready. Customers can see their own order status.</p>
+      <div id="adminOrders" style="margin-top:14px"></div>
+    </div>
+
+    <div class="card qr-card">
+      <div style="font-weight:900">📱 QR For Customers - Print This!</div>
+      <img id="adminQR" alt="Customer ordering QR">
+      <div id="adminQrLink"></div>
+      <div class="small-muted">Print this QR code and display it at the canteen.</div>
+    </div>
+
+    <button class="btn" style="background:#777;color:white;width:100%;margin-top:14px;padding:14px" id="logoutBtn">🔒 Sign out / Lock Admin</button>
+  </div>
+</div>
+<script type="module" src="admin.js"></script>
+</body>
+</html>
